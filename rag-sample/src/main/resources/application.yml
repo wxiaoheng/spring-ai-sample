@@ -1,0 +1,19 @@
+server:
+  port: 8063
+  servlet:
+    context-path: /ai/rag
+spring:
+  ai:
+    zhipuai:
+      api-key: ${ZP_API_KEY}
+      base-url: https://open.bigmodel.cn/api/paas/
+      chat:
+        options:
+          model: glm-4-plus
+      embedding:
+        options:
+          model: embedding-2
+    model:
+      image: false
+app:
+  resource: file:///C:/Users/wangxh/Desktop/omc.doc

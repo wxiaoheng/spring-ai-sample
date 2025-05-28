@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "spring-ai-mcp-test": {
+      "command": "java",
+      "args": [
+        "-Dspring.ai.mcp.server.stdio=true",
+        "-Dspring.main.web-application-type=none",
+        "-Dlogging.pattern.console=",
+        "-jar",
+        "F:\\study\\ai\\learn\\module1\\spring-ai-sample\\test-mcp-server\\target\\test-mcp-server-1.0-SNAPSHOT.jar"
+      ]
+    }
+  }
+}

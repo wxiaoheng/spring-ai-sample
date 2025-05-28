@@ -1,0 +1,8 @@
+spring:
+  main:
+    banner-mode: off
+  ai:
+    mcp:
+      server:
+        name: test-server
+        version: 0.0.1
