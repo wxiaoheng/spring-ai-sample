@@ -32,6 +32,10 @@ public class KnowledgeController {
     @Autowired
     private KnowledgeService knowledgeService;
 
+    /**
+     * 构建知识库
+     * 读取-切分-向量化-存储
+     */
     @PostMapping("init")
     public void build(){
         knowledgeService.build();
