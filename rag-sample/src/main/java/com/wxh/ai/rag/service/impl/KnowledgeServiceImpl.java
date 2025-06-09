@@ -17,6 +17,7 @@
 package com.wxh.ai.rag.service.impl;
 
 import com.wxh.ai.rag.service.KnowledgeService;
+import com.wxh.ai.rag.split.WordParser;
 import org.springframework.ai.document.Document;
 import org.springframework.ai.reader.tika.TikaDocumentReader;
 import org.springframework.ai.transformer.splitter.TextSplitter;
@@ -28,6 +29,7 @@ import org.springframework.core.io.Resource;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 
+import java.io.IOException;
 import java.util.List;
 
 /**
@@ -56,9 +58,18 @@ public class KnowledgeServiceImpl implements KnowledgeService {
         TextSplitter textSplitter = new TokenTextSplitter();
         // 使用默认tokenTextSplitter进行切分
         List<Document> splitDocuments = textSplitter.apply(documents);
-        // 向量化并存储
         vectorStore.doAdd(splitDocuments);
         System.out.println("build suceess!");
+//        try {
+//            // 自己写提取切分方式
+//            List<Document> splitDocuments = new WordParser().read(word.getFile().getAbsolutePath(), 3);
+//            // 向量化并存储
+//            vectorStore.doAdd(splitDocuments);
+//            System.out.println("build suceess!");
+//        } catch (IOException e) {
+//            throw new RuntimeException(e);
+//        }
+
     }
 
 }
